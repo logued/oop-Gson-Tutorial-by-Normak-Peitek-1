@@ -50,4 +50,10 @@ public class App {
         System.out.println(userObject2.toString());
     }
 
+    //TODO
+    // Create a class Car with make, model, year fields;
+    // Instantiate a Car object (you favourite car)
+    // Serialize to JSON and output
+    // Create a JSON String, then Deserialize it and output
+
 }
