@@ -1,6 +1,6 @@
-package dkit.oop;               // Feb 2022 Annotated by Dermot Logue
+package dkit.oop;               // Feb 2023 Annotated by Dermot Logue
 
-// Reference: Tutorial by Norman Peitek
+// Reference: Based on Tutorial by Norman Peitek
 // https://futurestud.io/tutorials/gson-getting-started-with-java-json-serialization-deserialization
 
 import com.google.gson.Gson;
@@ -8,9 +8,8 @@ import com.google.gson.Gson;
 /**
  * Demonstrates:
  * 1. Serializing a Java Object (UserSimple) into
- * a JSON string, using the Gson Parser.
- * 2. De-serializing a Json string and populating
- * a new Java Object with that data.
+ *    a JSON string, using the Gson Parser.
+ * 2. De-serializing a Json string into a new Java Object.
  */
 public class App {
     public static void main(String[] args) {
@@ -28,22 +27,24 @@ public class App {
                 true
         );
 
-        //// Serialize a Java Object into a Json String using the Gson parser
+        // Serialize a Java Object into a Json String using the Gson parser.
+        // Serialize simply means to convert from a Java object structure into a string
 
-        Gson gsonParser = new Gson();   // instantiate a Gson Parser
+        // Instantiate a Gson Parser
+        // The GSon parser classes have been loaded by Maven based on a dependency in the pom.xml file.
+        Gson gsonParser = new Gson();
 
-        String userJson = gsonParser.toJson(userObject);    // Serialize an object
+        String userJsonString = gsonParser.toJson(userObject);    // Serialize an object
 
         System.out.println("Serializing a Java Object into a Json String, gives:");
-        System.out.println(userJson);
+        System.out.println(userJsonString);
 
         //////////////////////////////////////////////////////////////////////////////////////
-
         //  De-Serialize a Json string into a new Java Object (UserSimple)
 
-        userJson = "{'age':26,'email':'norman@futurestud.io','isDeveloper':true,'name':'Norman'}";
+        userJsonString = "{'age':26,'email':'norman@futurestud.io','isDeveloper':true,'name':'Norman'}";
 
-        UserSimple userObject2 = gsonParser.fromJson(userJson, UserSimple.class);
+        UserSimple userObject2 = gsonParser.fromJson(userJsonString, UserSimple.class);
 
         System.out.println("De-Serializing a Json String into a new UserSimple Java Object. ");
         System.out.println("userObject2 contains: ");
@@ -51,9 +52,10 @@ public class App {
     }
 
     //TODO
-    // Create a class Car with make, model, year fields;
-    // Instantiate a Car object (you favourite car)
-    // Serialize to JSON and output
-    // Create a JSON String, then Deserialize it and output
-
+    // Create a separate class Car with make, model and year fields;
+    // Instantiate a (make a new) Car object (you favourite car)
+    // Serialize to JSON String and output that string.
+    // Create a JSON String with your second favourite car details, and then
+    // Deserialize it into a new Car object.  Output the new car object using
+    // toString().
 }
