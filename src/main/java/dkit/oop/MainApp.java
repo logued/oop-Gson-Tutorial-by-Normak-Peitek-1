@@ -43,7 +43,7 @@ public class MainApp {
         User user2 = gsonParser.fromJson(userJsonString, User.class);
 
         System.out.println("De-Serializing a Json String into a new User Java Object.");
-        System.out.println("userObject2 contains: ");
+        System.out.println("user2 contains: ");
         System.out.println(user2.toString());
     }
 
