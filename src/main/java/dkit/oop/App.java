@@ -41,7 +41,7 @@ public class App {
 
         //  De-Serialize a Json string into a new Java Object (UserSimple)
 
-        userJson = "{'age':26,'email':'norman@futurestud.io','isDeveloper':true,'name':'Norman'}";
+        userJson = "{\"age\":26,'email':'norman@futurestud.io','isDeveloper':true,'name':'Norman'}";
 
         UserSimple userObject2 = gsonParser.fromJson(userJson, UserSimple.class);
 
