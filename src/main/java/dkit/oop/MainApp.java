@@ -20,7 +20,7 @@ public class MainApp {
     public void start() {
         System.out.println("Gson Tutorials - by Norman Peitek");
 
-        User user = new User("Norman","norman@futurestud.io",26,true);
+        UserSimple userSimple = new UserSimple("Norman","norman@futurestud.io",26,true);
 
         // Serialize a Java object into a Json String using the Gson parser.
         // 'Serialize' simply means to convert from a Java object structure into a string
@@ -29,7 +29,7 @@ public class MainApp {
         // The Gson parser classes have been loaded by Maven based on a dependency in the pom.xml file.
         Gson gsonParser = new Gson();
 
-        String userJsonString = gsonParser.toJson(user);    // Serialize an object
+        String userJsonString = gsonParser.toJson(userSimple);    // Serialize an object
 
         System.out.println("Serializing a Java Object into a Json String, gives:");
         System.out.println(userJsonString);
@@ -40,11 +40,11 @@ public class MainApp {
         //userJsonString = "{'age':26,'email':'norman@futurestud.io','isDeveloper':true,'name':'Norman'}";
         userJsonString = "{\"age\":26,\"email\":\"norman@futurestud.io\",\"isDeveloper\":true,\"name\":\"Norman\"}";
 
-        User user2 = gsonParser.fromJson(userJsonString, User.class);
+        UserSimple userSimple2 = gsonParser.fromJson(userJsonString, UserSimple.class);
 
         System.out.println("De-Serializing a Json String into a new User Java Object.");
         System.out.println("user2 contains: ");
-        System.out.println(user2.toString());
+        System.out.println(userSimple2.toString());
     }
 
     //TODO

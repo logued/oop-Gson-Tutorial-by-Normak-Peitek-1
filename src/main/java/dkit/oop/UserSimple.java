@@ -1,13 +1,13 @@
 package dkit.oop;
 
-public class User {
+public class UserSimple {
 
         private String name;
         private String email;
         private int age;
         private boolean isDeveloper;
 
-    public User(String name, String email, int age, boolean isDeveloper) {
+    public UserSimple(String name, String email, int age, boolean isDeveloper) {
         this.name = name;
         this.email = email;
         this.age = age;
