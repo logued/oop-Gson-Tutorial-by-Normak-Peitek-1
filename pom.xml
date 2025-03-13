@@ -24,7 +24,7 @@
       <artifactId>gson</artifactId>
       <version>2.12.1</version>
     </dependency>
-    <dependency>
+    <dependency>.\administrator
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.13.1</version>
